@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/carousel.tsx
+ * Purpose: Carousel/slider UI primitive for horizontally scrollable content.
+ *
+ * Influenced by:
+ *  - React and touch/scroll interactions
+ *  - Tailwind for styling
+ *
+ * Influences:
+ *  - Exported Carousel used by pages that showcase multiple items in a compact space.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 import { ArrowLeft, ArrowRight } from "lucide-react";

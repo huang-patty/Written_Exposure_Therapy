@@ -20,6 +20,18 @@ cd Written_Exposure_Therapy
 npm install
 ```
 
+## Repository annotations & non-functional cleanup
+
+During a documentation pass the codebase was annotated with non-functional header comments in source files to indicate:
+
+- Purpose of the file
+- What it is influenced by (top-level imports or external systems)
+- What it influences (exports, routes, or other modules)
+
+This pass did not change any runtime behavior. It touched mostly `*.ts`, `*.tsx`, `*.js`, `*.css`, and `*.html` files. If you run into any tooling errors related to CSS/Tailwind directives after pulling these changes, you may need to ensure your local dev environment has the Tailwind/PostCSS toolchain and the correct VS Code/IDE plugins enabled.
+
+Note: A macOS `.DS_Store` file was detected inside `public/assets` and was flagged for removal; if it exists in your local checkout you can safely delete it (it is a metadata file and not needed by the project).
+
 ### Step 2: Configure the Backend Environment
 
 The backend server sends emails and requires credentials that must be stored securely.

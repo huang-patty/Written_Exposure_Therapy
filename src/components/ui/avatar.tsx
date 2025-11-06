@@ -1,3 +1,16 @@
+/**
+ * File: src/components/ui/avatar.tsx
+ * Purpose: Avatar component for displaying user photos or placeholders.
+ *
+ * Influenced by:
+ *  - React and utility classes from Tailwind
+ *
+ * Influences:
+ *  - Exported Avatar primitives used by author/team cards and anywhere a user image is shown.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as AvatarPrimitive from "@radix-ui/react-avatar";
 

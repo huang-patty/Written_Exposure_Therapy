@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/sheet.tsx
+ * Purpose: Sheet/slide-over primitives for small side panels and sheet-style modals.
+ *
+ * Influenced by:
+ *  - Radix primitives and React
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Sheet used by off-canvas content patterns.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { cva, type VariantProps } from "class-variance-authority";
 import { X } from "lucide-react";

@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/accordion.tsx
+ * Purpose: UI primitive for collapsible accordion sections used across the app.
+ *
+ * Influenced by:
+ *  - React for component creation
+ *  - Tailwind CSS / design tokens from `src/index.css`
+ *
+ * Influences:
+ *  - Exports accordion primitives used by pages and composite components to show collapsible content.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDown } from "lucide-react";

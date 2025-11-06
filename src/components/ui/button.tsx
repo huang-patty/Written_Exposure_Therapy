@@ -1,3 +1,18 @@
+/**
+ * File: src/components/ui/button.tsx
+ * Purpose: Reusable Button component with variants and size options.
+ *
+ * Influenced by:
+ *  - React
+ *  - class-variance-authority for variant handling
+ *  - Tailwind design tokens
+ *
+ * Influences:
+ *  - Exports Button used across the app for calls-to-action and controls.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";

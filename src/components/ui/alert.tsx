@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/alert.tsx
+ * Purpose: Small alert/notice UI component for showing inline messages.
+ *
+ * Influenced by:
+ *  - React and Tailwind design tokens
+ *  - Icon set (lucide-react) for optional icons
+ *
+ * Influences:
+ *  - Exported alert components used by pages and other UI components to display notices.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 

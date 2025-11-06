@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/popover.tsx
+ * Purpose: Popover primitives for small overlay content anchored to elements.
+ *
+ * Influenced by:
+ *  - Radix primitives and React
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Popover used by tooltips, menus, and contextual UI.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as PopoverPrimitive from "@radix-ui/react-popover";
 

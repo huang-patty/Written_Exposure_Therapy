@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/drawer.tsx
+ * Purpose: Drawer/slide-over primitives for off-canvas panels.
+ *
+ * Influenced by:
+ *  - Radix UI primitives and React
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Drawer used by side panels and menus.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { Drawer as DrawerPrimitive } from "vaul";
 

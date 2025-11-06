@@ -1,3 +1,16 @@
+/**
+ * File: src/components/ui/sidebar.tsx
+ * Purpose: Sidebar layout primitives and components for the application.
+ *
+ * Influenced by:
+ *  - React and Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Sidebar used by layouts that require persistent navigation.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { VariantProps, cva } from "class-variance-authority";

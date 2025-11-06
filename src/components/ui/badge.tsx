@@ -1,3 +1,16 @@
+/**
+ * File: src/components/ui/badge.tsx
+ * Purpose: Small badge/pill component used to label items (tags, statuses).
+ *
+ * Influenced by:
+ *  - React and Tailwind tokens
+ *
+ * Influences:
+ *  - Exported Badge component used by ResourceItem and other lists to show tags.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { cva, type VariantProps } from "class-variance-authority";
 

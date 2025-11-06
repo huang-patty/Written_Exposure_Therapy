@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/dropdown-menu.tsx
+ * Purpose: Dropdown menu primitives for compact action menus.
+ *
+ * Influenced by:
+ *  - Radix UI primitives and React
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports DropdownMenu used by buttons and toolbar actions.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
 import { Check, ChevronRight, Circle } from "lucide-react";

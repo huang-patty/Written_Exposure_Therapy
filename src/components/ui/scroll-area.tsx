@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/scroll-area.tsx
+ * Purpose: Scroll area primitive to provide styled scrollable regions with custom scrollbars.
+ *
+ * Influenced by:
+ *  - React and Radix primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports ScrollArea used by content regions that require custom scroll behavior.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 

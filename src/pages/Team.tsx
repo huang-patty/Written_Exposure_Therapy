@@ -1,3 +1,9 @@
+/**
+ * File: src/pages/Team.tsx
+ * Purpose: Team/authors page listing the treatment developers and bios.
+ * Influenced by: AuthorCard component; Influences: linked from navigation.
+ */
+
 import AuthorCard from "@/components/AuthorCard";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";

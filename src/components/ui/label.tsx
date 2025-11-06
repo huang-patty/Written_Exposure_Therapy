@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/label.tsx
+ * Purpose: Form label primitive with consistent styling and accessibility.
+ *
+ * Influenced by:
+ *  - React and Radix label primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Label used by forms and inputs to provide accessible labels.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { cva, type VariantProps } from "class-variance-authority";

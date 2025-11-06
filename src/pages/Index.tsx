@@ -1,3 +1,8 @@
+/**
+ * File: src/pages/Index.tsx
+ * Purpose: Simple index/fallback page used by the app; Influenced by layout; Influences App routing.
+ */
+
 // Update this page (the content is just a fallback if you fail to update the page)
 
 const Index = () => {

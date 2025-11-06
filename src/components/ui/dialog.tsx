@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/dialog.tsx
+ * Purpose: Dialog/modal primitives for creating modal overlays and content.
+ *
+ * Influenced by:
+ *  - Radix UI primitives and React
+ *  - Tailwind design tokens
+ *
+ * Influences:
+ *  - Exports Dialog components used by Command palette and other modal UIs.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";

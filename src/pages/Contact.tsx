@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -6,17 +7,16 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Send } from "lucide-react";
+/**
+ * File: src/pages/Contact.tsx
+ * Purpose: Contact page with a form to submit messages to site owners (posts to server.js).
+ * Influenced by: react-hook-form and UI form primitives; Influences: sends POST to backend endpoint.
+ */
 
 const Contact = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
 
   // --- MODIFIED SECTION STARTS HERE ---
 

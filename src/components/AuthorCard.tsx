@@ -1,3 +1,18 @@
+/**
+ * File: src/components/AuthorCard.tsx
+ * Purpose: Small presentational card that displays an author's photo, credentials, and biography.
+ *
+ * Influenced by:
+ *  - UI primitives from `@/components/ui/card`
+ *  - `lucide-react` for fallback user icon
+ *
+ * Influences:
+ *  - Exported as default `AuthorCard` used by pages (e.g., Team) to render author details.
+ *
+ * Notes:
+ *  - Non-functional header added for documentation. No runtime changes.
+ */
+
 import { Card, CardContent } from "@/components/ui/card";
 import { User } from "lucide-react";
 

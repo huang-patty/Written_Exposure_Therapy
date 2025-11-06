@@ -1,16 +1,17 @@
 /**
- * Layout Component
- * 
- * Main layout wrapper for the entire application. Includes:
- * - Responsive header with navigation
- * - Mobile menu functionality
- * - Footer with site information and links
- * 
- * Navigation items are configured in the navItems array below.
- * To add a new page to the navigation:
- * 1. Add a new route in App.tsx
- * 2. Add a corresponding entry in navItems
- * 3. Create the new page component in src/pages
+ * File: src/components/Layout.tsx
+ * Purpose: Global layout wrapper — provides header, navigation, main content slot, and footer.
+ *
+ * Influenced by:
+ *  - `react-router-dom` for navigation and location-aware active links
+ *  - UI primitives (e.g., `@/components/ui/button`) and icon set `lucide-react`
+ *
+ * Influences:
+ *  - Wraps page components rendered via routing (App.tsx)
+ *  - Controls site-level navigation items and footer content
+ *
+ * Notes:
+ *  - Non-functional header added. To add a new menu entry: add route in `App.tsx` and an item to `navItems`.
  */
 
 import { ReactNode } from "react";

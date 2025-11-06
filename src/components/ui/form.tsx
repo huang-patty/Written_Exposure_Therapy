@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/form.tsx
+ * Purpose: Form primitives and helpers for consistent form styling and validation wiring.
+ *
+ * Influenced by:
+ *  - React
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Form components used by contact and other input forms.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as LabelPrimitive from "@radix-ui/react-label";
 import { Slot } from "@radix-ui/react-slot";

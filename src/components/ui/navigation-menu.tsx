@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/navigation-menu.tsx
+ * Purpose: Navigation menu primitives and helpers for site navigation UI.
+ *
+ * Influenced by:
+ *  - React and Radix navigation primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports NavigationMenu used by header and other navigation areas.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as NavigationMenuPrimitive from "@radix-ui/react-navigation-menu";
 import { cva } from "class-variance-authority";

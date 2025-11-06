@@ -1,3 +1,8 @@
+/**
+ * File: src/pages/NotFound.tsx
+ * Purpose: 404 page shown when a route is not found. Influenced by router; Influences user navigation.
+ */
+
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 

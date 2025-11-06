@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/slider.tsx
+ * Purpose: Slider input primitive for selecting numeric ranges.
+ *
+ * Influenced by:
+ *  - React and Radix primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Slider used in forms or settings where range inputs are needed.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as SliderPrimitive from "@radix-ui/react-slider";
 

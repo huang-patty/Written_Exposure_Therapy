@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/radio-group.tsx
+ * Purpose: Radio button group primitives with consistent styling and accessibility.
+ *
+ * Influenced by:
+ *  - React and Radix primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports RadioGroup used by forms and selection controls.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as RadioGroupPrimitive from "@radix-ui/react-radio-group";
 import { Circle } from "lucide-react";

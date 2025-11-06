@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/sonner.tsx
+ * Purpose: Lightweight wrapper for Sonner toast notifications used by the app.
+ *
+ * Influenced by:
+ *  - React and the Sonner notification library
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports a configured Sonner Toaster used for global notifications.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import { useTheme } from "next-themes";
 import { Toaster as Sonner, toast } from "sonner";
 

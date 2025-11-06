@@ -1,3 +1,21 @@
+/*
+ * File: server.js
+ * Purpose: Small Express backend to forward contact form submissions via email.
+ *
+ * Influenced by:
+ *  - express: web framework used to expose an API endpoint
+ *  - nodemailer: to send email messages
+ *  - cors: to accept cross-origin requests from the frontend
+ *  - dotenv: loads environment variables for credentials
+ *
+ * Influences:
+ *  - Exposes POST /api/contact which the frontend can call to send email messages.
+ *
+ * Notes:
+ *  - This file is intended for development/testing and is not part of automated frontend deployments.
+ *  - Non-functional header added for documentation only.
+ */
+
 import express from 'express';
 import nodemailer from 'nodemailer';
 import cors from 'cors';

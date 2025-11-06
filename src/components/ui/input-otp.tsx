@@ -1,3 +1,16 @@
+/**
+ * File: src/components/ui/input-otp.tsx
+ * Purpose: One-time password / numeric OTP input component for short-code inputs.
+ *
+ * Influenced by:
+ *  - React and Tailwind tokens
+ *
+ * Influences:
+ *  - Exports InputOTP used in forms requiring short numeric codes.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { OTPInput, OTPInputContext } from "input-otp";
 import { Dot } from "lucide-react";

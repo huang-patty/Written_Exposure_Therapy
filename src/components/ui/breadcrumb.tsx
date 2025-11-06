@@ -1,3 +1,16 @@
+/**
+ * File: src/components/ui/breadcrumb.tsx
+ * Purpose: Breadcrumb navigation component for indicating page hierarchy.
+ *
+ * Influenced by:
+ *  - React and Tailwind styling
+ *
+ * Influences:
+ *  - Exported Breadcrumb primitives used by pages that need hierarchical navigation.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { ChevronRight, MoreHorizontal } from "lucide-react";

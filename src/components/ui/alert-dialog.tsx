@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/alert-dialog.tsx
+ * Purpose: Composed alert-dialog UI built on top of Radix/primitive dialogs for modal alerts.
+ *
+ * Influenced by:
+ *  - React and Radix UI primitives
+ *  - Tailwind/Tokens in `src/index.css`
+ *
+ * Influences:
+ *  - Exports dialog components used for modal confirmations and alerts across the app.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog";
 

@@ -1,3 +1,9 @@
+/**
+ * File: src/hooks/use-toast.ts
+ * Purpose: In-memory toast manager and hook for global notifications.
+ * Influenced by: simple dispatcher pattern; Influences: components that call `useToast` or `toast`.
+ */
+
 import * as React from "react";
 
 import type { ToastActionElement, ToastProps } from "@/components/ui/toast";

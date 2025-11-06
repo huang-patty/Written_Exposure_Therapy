@@ -1,3 +1,9 @@
+/**
+ * File: src/pages/About.tsx
+ * Purpose: Page that describes Written Exposure Therapy and how it works.
+ * Influenced by: UI primitives and layout; Influences: routed by App.tsx and linked from navigation.
+ */
+
 import { CheckCircle2, Clock, FileText, Users, Video } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 

@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/menubar.tsx
+ * Purpose: Menubar primitives used for top-level application menus.
+ *
+ * Influenced by:
+ *  - React and Radix primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Menubar components used in app toolbars and navigation.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as MenubarPrimitive from "@radix-ui/react-menubar";
 import { Check, ChevronRight, Circle } from "lucide-react";

@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/context-menu.tsx
+ * Purpose: Context menu primitives for right-click or menu-triggered actions.
+ *
+ * Influenced by:
+ *  - React and Radix primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports ContextMenu components used by lists or items that support contextual actions.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as ContextMenuPrimitive from "@radix-ui/react-context-menu";
 import { Check, ChevronRight, Circle } from "lucide-react";

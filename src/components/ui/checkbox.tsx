@@ -1,3 +1,18 @@
+/**
+ * File: src/components/ui/checkbox.tsx
+ * Purpose: Checkbox input with consistent styling and accessibility.
+ *
+ * Influenced by:
+ *  - React
+ *  - Radix primitives for inputs
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exported Checkbox used in forms and settings across the app.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
 import { Check } from "lucide-react";

@@ -1,15 +1,19 @@
 /**
- * Main Application Component
- * 
- * This is the root component of the Written Exposure Therapy website.
- * It sets up all the necessary providers and routing configuration.
- * 
- * Component Structure:
- * - QueryClientProvider: For handling API requests and caching
- * - TooltipProvider: For UI tooltips throughout the app
- * - Toaster/Sonner: For displaying notifications
- * - BrowserRouter: Handles client-side routing
- * - Layout: Main layout wrapper (header, footer, etc.)
+ * File: src/App.tsx
+ * Purpose: Root React application component — configures providers and client-side routing.
+ *
+ * Influenced by:
+ *  - @tanstack/react-query: QueryClient, QueryClientProvider
+ *  - react-router-dom: BrowserRouter, Routes, Route
+ *  - UI providers: TooltipProvider, Toaster, Sonner (from ./components/ui)
+ *  - Layout and page components (Layout, Home, About, Team, Resources, Contact, NotFound)
+ *
+ * Influences:
+ *  - Exports the default App component which wires up routing and global providers.
+ *  - Affects the whole client UI by providing tooltip/toaster/query contexts.
+ *
+ * Notes:
+ *  - Non-functional header added for documentation. No behaviour changes.
  */
 
 // UI Component Imports

@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/command.tsx
+ * Purpose: Command palette primitives for quick keyboard-driven navigation/actions.
+ *
+ * Influenced by:
+ *  - React and Radix/UI primitives
+ *  - Tailwind tokens for styling
+ *
+ * Influences:
+ *  - Provides a Command palette used by top-level UI for quick access features.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+ 
 import * as React from "react";
 import { type DialogProps } from "@radix-ui/react-dialog";
 import { Command as CommandPrimitive } from "cmdk";

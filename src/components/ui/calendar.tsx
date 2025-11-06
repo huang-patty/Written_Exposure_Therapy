@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/calendar.tsx
+ * Purpose: Calendar/date-picker UI wrapped for consistent styling.
+ *
+ * Influenced by:
+ *  - React and date handling primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Calendar used by forms or scheduling components.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DayPicker } from "react-day-picker";

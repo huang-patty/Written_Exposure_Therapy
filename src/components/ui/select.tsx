@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/select.tsx
+ * Purpose: Select dropdown primitive with consistent styling and accessibility.
+ *
+ * Influenced by:
+ *  - React and Radix primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Select used in forms and filters.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Check, ChevronDown, ChevronUp } from "lucide-react";

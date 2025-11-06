@@ -1,4 +1,20 @@
 /**
+ * File: src/components/BookCard.tsx
+ * Purpose: Presentational card that displays the WET treatment manual cover, blurb, and purchase link.
+ *
+ * Influenced by:
+ *  - `@/components/ui/card`, `@/components/ui/button` for layout and CTA
+ *  - `lucide-react` for the external link icon
+ *  - Local asset `/assets/book_cover.jpeg` (referenced in the component)
+ *
+ * Influences:
+ *  - Exported default `BookCard` used wherever the manual/purchase CTA is required.
+ *
+ * Notes:
+ *  - Non-functional header added for documentation. Existing inline docblock retained below.
+ */
+
+/**
  * BookCard Component
  * 
  * Displays information about the Written Exposure Therapy treatment manual

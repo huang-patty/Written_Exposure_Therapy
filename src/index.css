@@ -1,3 +1,17 @@
+/*
+  File: src/index.css
+  Purpose: Global CSS entry for the React app. Imports fonts and sets design tokens used by Tailwind layers.
+
+  Influenced by:
+   - Tailwind CSS configuration (tailwind.config.ts)
+   - Google Fonts import for Inter and Playfair Display
+
+  Influences:
+   - Provides design tokens, color variables, and base typographic rules consumed by components.
+
+  Notes: Non-functional header added. Keep color variables in HSL to support theme switching.
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
 @tailwind base;
 @tailwind components;

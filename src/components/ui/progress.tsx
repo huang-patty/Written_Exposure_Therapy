@@ -1,3 +1,16 @@
+/**
+ * File: src/components/ui/progress.tsx
+ * Purpose: Progress bar primitive for showing progress indicators.
+ *
+ * Influenced by:
+ *  - React and Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Progress used by forms or long-running operations.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as ProgressPrimitive from "@radix-ui/react-progress";
 

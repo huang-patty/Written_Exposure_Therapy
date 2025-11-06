@@ -1,3 +1,18 @@
+/**
+ * File: src/components/ResourceItem.tsx
+ * Purpose: Reusable card to surface resources (links, videos) with tags and optional icon.
+ *
+ * Influenced by:
+ *  - UI primitives: `@/components/ui/card`, `@/components/ui/badge`, `@/components/ui/button`
+ *  - `lucide-react` for small icons
+ *
+ * Influences:
+ *  - Exported default `ResourceItem` used in resource lists and pages to render resource cards.
+ *
+ * Notes:
+ *  - Non-functional header added for documentation only.
+ */
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";

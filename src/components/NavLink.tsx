@@ -1,3 +1,18 @@
+/**
+ * File: src/components/NavLink.tsx
+ * Purpose: Compatibility wrapper around `react-router-dom`'s NavLink to support className helpers.
+ *
+ * Influenced by:
+ *  - `react-router-dom` for NavLink behavior
+ *  - `@/lib/utils` for `cn` className merging helper
+ *
+ * Influences:
+ *  - Exports `NavLink` component used by layout/navigation code to easily apply active/pending classes.
+ *
+ * Notes:
+ *  - Non-functional header added for documentation only.
+ */
+
 import { NavLink as RouterNavLink, NavLinkProps } from "react-router-dom";
 import { forwardRef } from "react";
 import { cn } from "@/lib/utils";

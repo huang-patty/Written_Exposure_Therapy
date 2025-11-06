@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/input.tsx
+ * Purpose: Text input component with consistent styling and variants.
+ *
+ * Influenced by:
+ *  - React and Radix input primitives
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Input used by forms throughout the application.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 
 import { cn } from "@/lib/utils";

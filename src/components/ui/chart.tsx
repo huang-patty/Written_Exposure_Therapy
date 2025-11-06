@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/chart.tsx
+ * Purpose: Lightweight chart component wrapper (used for simple visualizations).
+ *
+ * Influenced by:
+ *  - React and charting libraries (if present)
+ *  - Tailwind tokens for styling
+ *
+ * Influences:
+ *  - Exports Chart component used by any page that needs simple charts.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as RechartsPrimitive from "recharts";
 

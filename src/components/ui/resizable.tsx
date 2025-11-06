@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/resizable.tsx
+ * Purpose: Resizable container primitive for adjustable panels or components.
+ *
+ * Influenced by:
+ *  - React and pointer/drag handling
+ *  - Tailwind tokens
+ *
+ * Influences:
+ *  - Exports Resizable used by split panes or resizable side panels.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import { GripVertical } from "lucide-react";
 import * as ResizablePrimitive from "react-resizable-panels";
 

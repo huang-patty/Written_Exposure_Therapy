@@ -1,3 +1,16 @@
+/**
+ * File: src/components/ui/separator.tsx
+ * Purpose: Visual separator component (horizontal/vertical) used to separate UI sections.
+ *
+ * Influenced by:
+ *  - React and Tailwind tokens
+ *
+ * Influences:
+ *  - Exported Separator used throughout layouts and cards.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import * as SeparatorPrimitive from "@radix-ui/react-separator";
 

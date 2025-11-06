@@ -1,7 +1,21 @@
+/*
+  File: styles.css
+  Purpose: Minimal global styles for legacy/non-Vite pages (static HTML fragments).
+
+  Influenced by:
+   - Basic typographic choices used in static HTML files under project root
+
+  Influences:
+   - Provides fallback styling for static HTML pages and older templates.
+
+  Notes: Kept intentionally small — primary styling is handled by Tailwind in the React app.
+*/
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
+
 h1, h2, h3 {
   color: #2c3e50;
 }

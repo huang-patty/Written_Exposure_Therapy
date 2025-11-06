@@ -1,3 +1,17 @@
+/**
+ * File: src/components/ui/pagination.tsx
+ * Purpose: Pagination controls for lists and paginated content.
+ *
+ * Influenced by:
+ *  - React and small icon set (lucide-react)
+ *  - Button primitive for link variants
+ *
+ * Influences:
+ *  - Exports Pagination used by any paged lists in the UI.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react";
 

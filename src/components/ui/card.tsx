@@ -1,3 +1,16 @@
+/**
+ * File: src/components/ui/card.tsx
+ * Purpose: Card layout primitives (Card, CardHeader, CardContent, CardFooter) used across the app.
+ *
+ * Influenced by:
+ *  - React and Tailwind tokens
+ *
+ * Influences:
+ *  - Provides consistent card structure for content, forms, and lists.
+ *
+ * Notes: Non-functional header added for documentation only.
+ */
+
 import * as React from "react";
 
 import { cn } from "@/lib/utils";

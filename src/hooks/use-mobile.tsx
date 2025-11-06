@@ -1,3 +1,9 @@
+/**
+ * File: src/hooks/use-mobile.tsx
+ * Purpose: Hook to detect whether the viewport matches the mobile breakpoint.
+ * Influenced by: browser window API; Influences: components that alter layout/responsiveness.
+ */
+
 import * as React from "react";
 
 const MOBILE_BREAKPOINT = 768;
