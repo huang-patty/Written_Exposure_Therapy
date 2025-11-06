@@ -9,7 +9,7 @@ const BookCard = () => {
         <div className="space-y-4">
           <div className="bg-secondary/20 rounded-lg p-4 flex justify-center">
             <img
-              src="/assets/book-cover.png"
+              src="/assets/book_cover.jpeg"
               alt="Written Exposure Therapy for PTSD - book cover"
               className="w-full max-w-[300px] h-auto rounded-md shadow-md"
             />
