@@ -135,12 +135,6 @@ const Home = () => {
                 <Link to="/team">Meet the Authors</Link>
               </Button>
             </div>
-      /**
-       * File: src/pages/Home.tsx
-       * Purpose: Landing page component for the site (home/landing content).
-       * Influenced by: layout and UI primitives; Influences: routed by App.tsx.
-       */
-
           </div>
         </div>
       </section>
