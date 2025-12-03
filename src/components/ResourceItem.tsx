@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Play } from "lucide-react";
 import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
 interface ResourceItemProps {
   title: string;
@@ -14,6 +15,8 @@ interface ResourceItemProps {
 }
 
 const ResourceItem = ({ title, description, tags, link, videoEmbed, icon }: ResourceItemProps) => {
+  const isInternal = link?.startsWith("/"); // detect internal links
+
   return (
     <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
       <CardHeader>
@@ -48,24 +51,40 @@ const ResourceItem = ({ title, description, tags, link, videoEmbed, icon }: Reso
 
         {link && (
           <Button asChild className="mt-auto">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2"
-            >
-              {videoEmbed ? (
-                <>
-                  <Play className="h-4 w-4" />
-                  Watch Video
-                </>
-              ) : (
-                <>
-                  <ExternalLink className="h-4 w-4" />
-                  View Resource
-                </>
-              )}
-            </a>
+            {isInternal ? (
+              <Link to={link} className="flex items-center gap-2">
+                {videoEmbed ? (
+                  <>
+                    <Play className="h-4 w-4" />
+                    Watch Video
+                  </>
+                ) : (
+                  <>
+                    <ExternalLink className="h-4 w-4" />
+                    View Resource
+                  </>
+                )}
+              </Link>
+            ) : (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                {videoEmbed ? (
+                  <>
+                    <Play className="h-4 w-4" />
+                    Watch Video
+                  </>
+                ) : (
+                  <>
+                    <ExternalLink className="h-4 w-4" />
+                    View Resource
+                  </>
+                )}
+              </a>
+            )}
           </Button>
         )}
       </CardContent>

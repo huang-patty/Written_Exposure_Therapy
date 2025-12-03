@@ -47,6 +47,14 @@ const Resources = () => {
       link: "https://www.amazon.com/dp/143384437X",
       icon: <FileText className="h-6 w-6 text-primary" />,
     },
+    {
+    title: "Published Studies on Written Exposure Therapy",
+    description:
+      "Peer-reviewed research examining the effectiveness, outcomes, and clinical applications of Written Exposure Therapy across diverse populations.",
+    tags: ["Research", "Published Studies", "Evidence-Based"],
+    link: "/sources",
+    icon: <BookOpen className="h-6 w-6 text-primary" />,
+  },
   ];
 
   return (
