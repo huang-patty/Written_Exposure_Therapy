@@ -56,7 +56,7 @@ const About = () => {
                   <div>
                     <h3 className="font-semibold mb-2">Therapist Provides Psychoeducation and Guidance</h3>
                     <p className="text-sm text-muted-foreground">
-                      Your therapist will help you understand PTSD and guide you through the writing process with evidence-based support.
+                      Your therapist will help you understand PTSD and guide you through the writing process.
                     </p>
                   </div>
                 </div>
@@ -64,9 +64,9 @@ const About = () => {
                 <div className="flex items-start gap-4 p-4 bg-secondary/20 rounded-lg">
                   <CheckCircle2 className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold mb-2">No Outside-of-Session Homework Required</h3>
+                    <h3 className="font-semibold mb-2">No Outside-of-Session Assignments Required</h3>
                     <p className="text-sm text-muted-foreground">
-                      All therapeutic work happens during your scheduled sessions, making it easier to maintain treatment adherence.
+                      All therapeutic work happens during your scheduled sessions, resulting in less time to commit to treatment.
                     </p>
                   </div>
                 </div>
@@ -90,42 +90,26 @@ const About = () => {
               <CardTitle className="text-2xl">Where WET Can Be Used</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="p-4 border rounded-lg">
-                  <h3 className="font-semibold mb-2">Clinical Settings</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      Mental health clinics
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      VA hospitals
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      Private practice
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="p-4 border rounded-lg">
-                  <h3 className="font-semibold mb-2">Primary Care Settings</h3>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      Primary care clinics
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      Community health centers
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <CheckCircle2 className="h-4 w-4 text-primary" />
-                      Integrated care models
-                    </li>
-                  </ul>
-                </div>
+              <div className="p-6 border rounded-lg bg-secondary/5">
+                <h3 className="font-semibold mb-4 text-lg">Clinical Settings</h3>
+                <ul className="grid sm:grid-cols-2 gap-4 text-muted-foreground">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                    Outpatient clinics
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                    Psychiatry hospital in-patient settings
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                    Residential treatment programs
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
+                    Primary care clinics
+                  </li>
+                </ul>
               </div>
             </CardContent>
           </Card>
@@ -155,7 +139,7 @@ const About = () => {
                 ))}
               </div>
               <p className="text-sm text-muted-foreground pt-4 border-t">
-                Research has demonstrated that WET is as effective as longer PTSD treatments while showing significantly better treatment adherence rates.
+                Research has demonstrated that WET is as effective as more time intensive PTSD treatments while showing significantly better treatment adherence rates.
               </p>
             </CardContent>
           </Card>

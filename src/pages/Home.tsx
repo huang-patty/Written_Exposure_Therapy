@@ -33,7 +33,7 @@ const Home = () => {
               For Posttraumatic Stress Disorder
             </p>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A brief, evidence-based cognitive-behavioral treatment that delivers results in just 5 sessions
+              A brief, evidence-based cognitive-behavioral treatment
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
               <Button size="lg" asChild>
@@ -95,11 +95,11 @@ const Home = () => {
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground/90">Better treatment adherence rates</span>
+                    <span className="text-foreground/90">Low Treatment Dropout Rates</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground/90">No homework required between sessions</span>
+                    <span className="text-foreground/90">No assignments required between sessions</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />

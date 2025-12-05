@@ -73,7 +73,7 @@ const BookCard = () => {
             </Button>
             
             <p className="text-xs text-center text-muted-foreground">
-              Available in Japanese, Korean, Chinese, and Turkish translations
+              
             </p>
           </div>
         </div>
