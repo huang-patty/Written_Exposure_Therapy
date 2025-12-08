@@ -7,10 +7,12 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+// Import the new Newsletter component
+import Newsletter from "@/components/Newsletter";
+
 /**
  * File: src/pages/Contact.tsx
- * Purpose: Contact page with a form to submit messages to site owners (posts to server.js).
- * Influenced by: react-hook-form and UI form primitives; Influences: sends POST to backend endpoint.
+ * Purpose: Contact page with a form to submit messages and a newsletter subscription box.
  */
 
 const Contact = () => {
@@ -18,32 +20,27 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  // --- MODIFIED SECTION STARTS HERE ---
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
       // Send data to your backend API endpoint
-      const response = await fetch('http://localhost:3001/api/contact', {
+      const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData), // Send form data as a JSON string
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        // If the request was successful, show a success toast
         toast({
           title: "Message Sent!",
           description: "Thank you for contacting us. We'll get back to you shortly.",
         });
-        // Clear the form fields
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        // If the server responded with an error, show a failure toast
         const errorData = await response.json();
         toast({
           variant: "destructive",
@@ -52,7 +49,6 @@ const Contact = () => {
         });
       }
     } catch (error) {
-      // If there was a network error, log it and show a generic error toast
       console.error('Submission error:', error);
       toast({
         variant: "destructive",
@@ -60,12 +56,9 @@ const Contact = () => {
         description: "Could not connect to the server. Please check your internet connection.",
       });
     } finally {
-      // Re-enable the submit button regardless of the outcome
       setIsSubmitting(false);
     }
   };
-
-  // --- MODIFIED SECTION ENDS HERE ---
 
   return (
     <div className="min-h-screen py-12 sm:py-16">
@@ -165,6 +158,9 @@ const Contact = () => {
               </form>
             </CardContent>
           </Card>
+
+          {/* --- NEW SECTION: Newsletter Component --- */}
+          <Newsletter />
 
           {/* Additional Contact Info */}
           <div className="bg-gradient-to-br from-primary/5 to-accent/10 rounded-xl p-8 border border-primary/20">

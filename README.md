@@ -1,108 +1,188 @@
 # Written Exposure Therapy Website
 
-## Project info
+**Live URL**: [https://writtenexposure.com](https://writtenexposure.com)
 
-**URL**: https://writtenexposuretherapy.org
+## Project Overview
 
-## Local Development Setup
+This is a web platform for Written Exposure Therapy (WET). The codebase consists of a **React/Vite frontend** and a **Serverless Node.js backend** (hosted on Vercel) for handling contact forms and newsletter subscriptions.
 
-This project consists of a **Vite/React frontend** and a **Node.js/Express backend** for handling the contact form. To run the project locally, you will need to run both parts simultaneously.
+### Architecture (Free Tier Strategy)
 
-### Step 1: Install Dependencies
+To keep hosting completely free while supporting backend logic:
 
-First, install the necessary npm packages for both the frontend and backend.
+1.  **Frontend & Backend:** Hosted on **Vercel** (Free Tier).
+2.  **Domain:** Registered on **GoDaddy**, pointing to Vercel via Nameservers.
+3.  **Database:** Uses **MongoDB Atlas** (Free Tier) to store newsletter subscribers.
+4.  **Backend Logic:** Uses Vercel Serverless Functions (`/api` directory) to communicate between the frontend and the database.
+
+## Technologies
+
+**Frontend:**
+
+- Vite (Build tool)
+- TypeScript
+- React
+- Tailwind CSS
+- shadcn/ui (Components)
+
+**Backend:**
+
+- Vercel Serverless Functions (Node.js)
+- MongoDB Atlas (Cloud Database)
+- Mongoose (ODM for MongoDB)
+- Nodemailer (Email transport)
+
+---
+
+## 🛠 Local Development Setup
+
+Follow these steps to run the project on your machine.
+
+### 1. Install Dependencies
 
 ```sh
-# Navigate to the project directory
 cd Written_Exposure_Therapy
-
-# Install all dependencies from package.json
 npm install
 ```
 
-## Repository annotations & non-functional cleanup
+### 2. Configure Environment Variables
 
-During a documentation pass the codebase was annotated with non-functional header comments in source files to indicate:
-
-- Purpose of the file
-- What it is influenced by (top-level imports or external systems)
-- What it influences (exports, routes, or other modules)
-
-This pass did not change any runtime behavior. It touched mostly `*.ts`, `*.tsx`, `*.js`, `*.css`, and `*.html` files. If you run into any tooling errors related to CSS/Tailwind directives after pulling these changes, you may need to ensure your local dev environment has the Tailwind/PostCSS toolchain and the correct VS Code/IDE plugins enabled.
-
-Note: A macOS `.DS_Store` file was detected inside `public/assets` and was flagged for removal; if it exists in your local checkout you can safely delete it (it is a metadata file and not needed by the project).
-
-### Step 2: Configure the Backend Environment
-
-The backend server sends emails and requires credentials that must be stored securely.
-
-1.  In the root of the project, create a new file named `.env`.
-2.  Copy the following content into your new `.env` file and fill it with your own email provider's information.
+Create a `.env` file in the root directory. You need these variables for the database and emails to work.
 
 ```env
 # .env
 
-# Your Email Provider Credentials (Example is for Gmail)
-# IMPORTANT: For Gmail, you must use a special "App Password", not your regular password.
-# See Google's guide: https://support.google.com/accounts/answer/185833
+# Gmail Configuration (Requires App Password: https://support.google.com/accounts/answer/185833)
 EMAIL_USER="your-email@gmail.com"
 EMAIL_PASS="your-16-digit-app-password"
 
-# The Email Address to Receive the Form Submissions
-RECIPIENT_EMAIL="client-email-of-your-choice@example.com"
+# Where contact form submissions should be sent
+RECIPIENT_EMAIL="doctor-email@example.com"
+
+# MongoDB Connection String (Get this from MongoDB Atlas Dashboard)
+# Ensure the password in the string does not have special characters like @ or : unless URL encoded.
+MONGODB_URI="mongodb+srv://admin:YOUR_PASSWORD@cluster0.xyz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+
+# Secret password to access the Admin CSV download page
+ADMIN_SECRET="MySecretPassword123"
 ```
 
-> **Note:** The `.env` file is included in `.gitignore` and should **never** be committed to version control. It is for local development only.
+### 3. Run the Application
 
-### Step 3: Run the Application
-
-You will need to open **two separate terminals** to run the frontend and backend servers.
-
-**Terminal 1: Start the Frontend (Vite)**
+**Option A: Standard Development (Frontend Only)**
+If you are only working on UI changes:
 
 ```sh
-# This command starts the React development server, usually on http://localhost:5173
 npm run dev
 ```
 
-**Terminal 2: Start the Backend (Node.js)**
+**Option B: Full Stack Development (Frontend + API)**
+To test API endpoints locally (like the contact form or database), usage depends on if you are testing the legacy `server.js` or Vercel functions.
 
-```sh
-# This command starts the Express API server, which will run on http://localhost:3001
-node server.js
-```
+- **Legacy:** Open a second terminal and run `node server.js`.
+- **Vercel:** Install Vercel CLI (`npm i -g vercel`) and run `vercel dev`.
 
-Once both servers are running, you can open your browser to the Vite development URL to view the website and test the contact form.
+---
 
-## Project Technologies
+## 🚀 Deployment Guide
 
-This project is built with:
+The site uses **Continuous Deployment**. Any change pushed to the `main` branch on GitHub will automatically trigger a build and deploy on Vercel.
 
-#### **Frontend**
+### 1. How to Deploy Updates
 
-- Vite - Next Generation Frontend Tooling
-- TypeScript - JavaScript with syntax for types
-- React - JavaScript library for building user interfaces
-- shadcn/ui - High-quality UI components
-- Tailwind CSS - Utility-first CSS framework
+1.  Make changes to your code.
+2.  Commit and push to GitHub:
+    ```sh
+    git add .
+    git commit -m "Description of changes"
+    git push origin main
+    ```
+3.  Visit the [Vercel Dashboard](https://vercel.com/dashboard) to watch the build.
 
-#### **Backend**
+### 2. Domain Configuration (GoDaddy + Vercel)
 
-- Node.js - JavaScript runtime environment
-- Express - Web framework for Node.js
-- Nodemailer - Module to send emails
-- CORS - Middleware for enabling cross-origin requests
+The domain is connected via Nameservers. If you ever need to reconnect it:
 
-## Deployment
+1.  **In Vercel:** Go to Settings > Domains > Add `writtenexposure.com`.
+2.  **In GoDaddy:**
+    - Go to DNS Management.
+    - Change **Nameservers** to Custom.
+    - Set them to:
+      - `ns1.vercel-dns.com`
+      - `ns2.vercel-dns.com`
 
-The frontend site is deployed to writtenexposuretherapy.org through continuous deployment. When changes are pushed to the `main` branch, the static site will automatically build and deploy.
+### 3. Production Environment Variables
 
-**Note on Backend Deployment:** The `server.js` file is for development and is **not** part of the current automated deployment pipeline. To deploy the contact form functionality to production, the Node.js server must be hosted separately on a service like Render, Heroku, or a VPS.
+The `.env` file is not uploaded to GitHub. You must set these variables in Vercel:
 
-## Contributing
+1.  Go to Vercel Project Settings > **Environment Variables**.
+2.  Add the following keys (same as your local .env):
+    - `EMAIL_USER`
+    - `EMAIL_PASS`
+    - `RECIPIENT_EMAIL`
+    - `MONGODB_URI`
+    - `ADMIN_SECRET`
+3.  **Redeploy** for changes to take effect.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+---
+
+## 👮 Admin & Newsletter Management
+
+### Admin Page
+
+A hidden admin page is available to download the list of newsletter subscribers as a CSV file (readable in Excel).
+
+- **URL:** [https://writtenexposure.com/admin](https://writtenexposure.com/admin)
+- **Access:** Requires the `ADMIN_SECRET` password set in your environment variables.
+- **Functionality:** Clicking the download button triggers `/api/export-subscribers`, which authenticates the user and generates the file.
+
+### Newsletter API
+
+The newsletter logic is handled in `/api/newsletter.js`.
+
+- **POST:** Adds a new email to MongoDB. Checks for duplicates automatically.
+- **DELETE:** Removes an email from MongoDB.
+
+---
+
+## ⚙️ Configuration Files
+
+### `vercel.json`
+
+This file exists in the root directory to handle **SPA Routing**.
+
+- **Purpose:** If a user visits a sub-page like `/admin` directly, Vercel normally throws a 404 error because `admin.html` doesn't exist.
+- **Fix:** This file tells Vercel to redirect all non-API requests to `index.html`, allowing React Router to render the correct page.
+
+---
+
+## 🚧 Maintenance Mode
+
+The application has a built-in "Under Construction" screen to hide the site content while you are working on it.
+
+**To Enable Maintenance Mode:**
+
+1.  Open `src/App.tsx`.
+2.  Locate the constant at the top of the file:
+    ```typescript
+    const IS_MAINTENANCE_MODE = true; // Set to true to hide site
+    ```
+3.  Commit and push the change.
+
+---
+
+## ⚠️ Important Troubleshooting
+
+### CORS Errors
+
+If you change the domain name or add a new environment, you might get "Network Error" when submitting forms.
+
+- **Fix:** Open `api/newsletter.js` and `api/contact.js`. Update the `allowedOrigins` array to include your new domain.
+
+### Database Connection Errors
+
+If forms fail with "Bad Auth" or connection errors:
+
+1.  Check that `MONGODB_URI` in Vercel settings matches your MongoDB Atlas string exactly.
+2.  Ensure your IP address is allowed in MongoDB Atlas -> Network Access (Use `0.0.0.0/0` to allow Vercel).
+3.  Ensure your database password does not contain special characters that break the URL format.
