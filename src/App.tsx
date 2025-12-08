@@ -23,6 +23,7 @@ import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Sources from "./pages/sources";
+import Admin from "./pages/Admin"; // <--- NEW IMPORT
 
 // Initialize React Query client
 const queryClient = new QueryClient();
@@ -74,6 +75,10 @@ const App = () => {
               <Route path="/resources" element={<Resources />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/sources" element={<Sources />} />
+              
+              {/* ADMIN ROUTE */}
+              <Route path="/admin" element={<Admin />} />
+
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
