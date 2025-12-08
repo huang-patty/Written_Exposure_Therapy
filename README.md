@@ -1,108 +1,159 @@
 # Written Exposure Therapy Website
 
-## Project info
+**Live URL**: [https://writtenexposure.com](https://writtenexposure.com])
 
-**URL**: https://writtenexposuretherapy.org
+## Project Overview
 
-## Local Development Setup
+This is a web platform for Written Exposure Therapy (WET). The codebase consists of a **React/Vite frontend** and a **Serverless Node.js backend** (hosted on Vercel) for handling contact forms and newsletter subscriptions.
 
-This project consists of a **Vite/React frontend** and a **Node.js/Express backend** for handling the contact form. To run the project locally, you will need to run both parts simultaneously.
+### Architecture (Free Tier Strategy)
 
-### Step 1: Install Dependencies
+To keep hosting completely free while supporting backend logic:
 
-First, install the necessary npm packages for both the frontend and backend.
+1.  **Frontend & Backend:** Hosted on **Vercel** (Free Tier).
+2.  **Domain:** Registered on **GoDaddy**, pointing to Vercel via Nameservers.
+3.  **Backend Logic:** Uses Vercel Serverless Functions (`/api` directory) instead of a traditional running `server.js` process.
+
+## Technologies
+
+**Frontend:**
+
+- Vite (Build tool)
+- TypeScript
+- React
+- Tailwind CSS
+- shadcn/ui (Components)
+
+**Backend:**
+
+- Vercel Serverless Functions (Node.js)
+- Nodemailer (Email transport)
+
+---
+
+## 🛠 Local Development Setup
+
+Follow these steps to run the project on your machine.
+
+### 1. Install Dependencies
 
 ```sh
-# Navigate to the project directory
 cd Written_Exposure_Therapy
-
-# Install all dependencies from package.json
 npm install
 ```
 
-## Repository annotations & non-functional cleanup
+### 2. Configure Environment Variables
 
-During a documentation pass the codebase was annotated with non-functional header comments in source files to indicate:
-
-- Purpose of the file
-- What it is influenced by (top-level imports or external systems)
-- What it influences (exports, routes, or other modules)
-
-This pass did not change any runtime behavior. It touched mostly `*.ts`, `*.tsx`, `*.js`, `*.css`, and `*.html` files. If you run into any tooling errors related to CSS/Tailwind directives after pulling these changes, you may need to ensure your local dev environment has the Tailwind/PostCSS toolchain and the correct VS Code/IDE plugins enabled.
-
-Note: A macOS `.DS_Store` file was detected inside `public/assets` and was flagged for removal; if it exists in your local checkout you can safely delete it (it is a metadata file and not needed by the project).
-
-### Step 2: Configure the Backend Environment
-
-The backend server sends emails and requires credentials that must be stored securely.
-
-1.  In the root of the project, create a new file named `.env`.
-2.  Copy the following content into your new `.env` file and fill it with your own email provider's information.
+Create a `.env` file in the root directory. These variables are required for the contact form to work locally.
 
 ```env
 # .env
 
-# Your Email Provider Credentials (Example is for Gmail)
-# IMPORTANT: For Gmail, you must use a special "App Password", not your regular password.
-# See Google's guide: https://support.google.com/accounts/answer/185833
+# Gmail Configuration (Requires App Password: https://support.google.com/accounts/answer/185833)
 EMAIL_USER="your-email@gmail.com"
 EMAIL_PASS="your-16-digit-app-password"
 
-# The Email Address to Receive the Form Submissions
-RECIPIENT_EMAIL="client-email-of-your-choice@example.com"
+# Where form submissions should be sent
+RECIPIENT_EMAIL="doctor-email@example.com"
 ```
 
-> **Note:** The `.env` file is included in `.gitignore` and should **never** be committed to version control. It is for local development only.
+### 3. Run the Application
 
-### Step 3: Run the Application
-
-You will need to open **two separate terminals** to run the frontend and backend servers.
-
-**Terminal 1: Start the Frontend (Vite)**
+**Option A: Standard Development (Frontend Only)**
+If you are only working on UI changes:
 
 ```sh
-# This command starts the React development server, usually on http://localhost:5173
 npm run dev
 ```
 
-**Terminal 2: Start the Backend (Node.js)**
+**Option B: Full Stack Development (Frontend + API)**
+To test API endpoints locally (like the contact form), usage depends on if you are testing the legacy `server.js` or Vercel functions.
 
-```sh
-# This command starts the Express API server, which will run on http://localhost:3001
-node server.js
-```
+- **Legacy:** Open a second terminal and run `node server.js`.
+- **Vercel:** Install Vercel CLI (`npm i -g vercel`) and run `vercel dev`.
 
-Once both servers are running, you can open your browser to the Vite development URL to view the website and test the contact form.
+---
 
-## Project Technologies
+## 🚀 Deployment Guide
 
-This project is built with:
+The site uses **Continuous Deployment**. Any change pushed to the `main` branch on GitHub will automatically trigger a build and deploy on Vercel.
 
-#### **Frontend**
+### 1. How to Deploy Updates
 
-- Vite - Next Generation Frontend Tooling
-- TypeScript - JavaScript with syntax for types
-- React - JavaScript library for building user interfaces
-- shadcn/ui - High-quality UI components
-- Tailwind CSS - Utility-first CSS framework
+1.  Make changes to your code.
+2.  Commit and push to GitHub:
+    ```sh
+    git add .
+    git commit -m "Description of changes"
+    git push origin main
+    ```
+3.  Visit the [Vercel Dashboard](https://vercel.com/dashboard) to watch the build.
 
-#### **Backend**
+### 2. Domain Configuration (GoDaddy + Vercel)
 
-- Node.js - JavaScript runtime environment
-- Express - Web framework for Node.js
-- Nodemailer - Module to send emails
-- CORS - Middleware for enabling cross-origin requests
+The domain is connected via Nameservers. If you ever need to reconnect it:
 
-## Deployment
+1.  **In Vercel:** Go to Settings > Domains > Add `writtenexposuretherapy.org`.
+2.  **In GoDaddy:**
+    - Go to DNS Management.
+    - Change **Nameservers** to Custom.
+    - Set them to:
+      - `ns1.vercel-dns.com`
+      - `ns2.vercel-dns.com`
 
-The frontend site is deployed to writtenexposuretherapy.org through continuous deployment. When changes are pushed to the `main` branch, the static site will automatically build and deploy.
+### 3. Production Environment Variables
 
-**Note on Backend Deployment:** The `server.js` file is for development and is **not** part of the current automated deployment pipeline. To deploy the contact form functionality to production, the Node.js server must be hosted separately on a service like Render, Heroku, or a VPS.
+The `.env` file is not uploaded to GitHub. You must set these variables in Vercel:
 
-## Contributing
+1.  Go to Vercel Project Settings > **Environment Variables**.
+2.  Add the following keys (same as your local .env):
+    - `EMAIL_USER`
+    - `EMAIL_PASS`
+    - `RECIPIENT_EMAIL`
+3.  **Redeploy** for changes to take effect.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+---
+
+## 🚧 Maintenance Mode
+
+The application has a built-in "Under Construction" screen to hide the site content while you are working on it.
+
+**To Enable Maintenance Mode:**
+
+1.  Open `src/App.tsx`.
+2.  Locate the constant at the top of the file:
+    ```typescript
+    const IS_MAINTENANCE_MODE = true; // Set to true to hide site
+    ```
+3.  Commit and push the change.
+
+**To Disable Maintenance Mode:**
+
+1.  Set the variable to `false`.
+2.  Commit and push.
+
+---
+
+## ⚠️ Backend Important Notes
+
+### Serverless Limitations (The "Database" Issue)
+
+Because Vercel is "serverless," the backend code wakes up for a second to handle a request and then shuts down. **It cannot save files to the disk.**
+
+- **Problem:** Writing to `subscribers.json` (as done in the original local version) **will not work** in production. The file will be reset every time the server sleeps.
+- **Solution:** You must use an external database or service for the newsletter.
+  - _Option A (Recommended):_ Connect the form to **Mailchimp** or **ConvertKit**.
+  - _Option B (Advanced):_ Connect the API to **MongoDB Atlas** (Free Tier).
+
+### API Routes
+
+The production site uses the `/api` directory for backend logic, mapped automatically by Vercel.
+
+- `api/contact.js` -> Endpoint: `/api/contact`
+- `api/newsletter.js` -> Endpoint: `/api/newsletter`
+
+---
+
+## Repository Annotations
+
+During documentation passes, non-functional header comments were added to source files to indicate purpose and influence. A macOS `.DS_Store` file was detected inside `public/assets` and can be safely deleted.
