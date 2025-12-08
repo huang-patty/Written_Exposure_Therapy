@@ -1,4 +1,3 @@
-/public/assets/*.JPG
 node_modules/
 /.env
 /.subscribers.json
