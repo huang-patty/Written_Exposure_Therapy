@@ -6,8 +6,8 @@ export default async function handler(req, res) {
   // 1. CORS CONFIGURATION (Fixes Network Errors)
   // =================================================================
   const allowedOrigins = [
-    'https://writtenexposuretherapy.org',
-    'https://www.writtenexposuretherapy.org',
+    'https://writtenexposure.com',
+    'https://www.writtenexposure.com',
     'http://localhost:5173', // Vite local dev
     'http://localhost:3000', // Alternative local dev
     'http://localhost:3001'  // Alternative local dev
